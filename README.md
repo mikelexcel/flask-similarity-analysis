@@ -7,7 +7,7 @@ This repository contains a high-performance **Flask-based API** designed to perf
 ## 🚀 Key Features
 
 *   **Multimodal Scraper**: Uses `Scrapy` to extract titles, meta-descriptions, and paragraph content. To handle the Twisted reactor limitations of Scrapy within Flask, each scrape is executed in a dedicated subprocess.
-*   **Parallel Processing**: Utilizes `ThreadPoolExecutor` to scrape multiple comparison sites concurrently, significantly reducing response latency.
+*   **Parallel Processing**: Utilises `ThreadPoolExecutor` to scrape multiple comparison sites concurrently, significantly reducing response latency.
 *   **Dynamic Search Backend**: A tiered fallback system for finding comparison links:
     1.  **Google Custom Search API** (Primary)
     2.  **SerpApi** (Secondary)
@@ -52,7 +52,7 @@ python run.py
 ```
 
 ### API Endpoint: `POST /analyse`
-Submit a URL to analyze its similarity against top search results.
+Submit a URL to analyse its similarity against top search results.
 
 **Request Body:**
 ```json
@@ -88,8 +88,7 @@ Submit a URL to analyze its similarity against top search results.
 ## ⚙️ Technical Logic
 The "Overall Score" is not a simple average. The application calculates the **mean** for each field (Title, Description, Paragraphs) across all comparison sources, and then calculates the **median** of those three means. This prevents a single missing field (like an empty meta-description) from disproportionately skewing the final result.
 
-All similarity calculations utilize $cosine\_similarity$ on $TF-IDF$ matrices:
-$$\text{similarity} = \cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \|\mathbf{B}\|}$$
+All similarity calculations utilise $cosine\_ similarity$ on $TF-IDF$ matrices: $$\text{similarity} = \cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \|\mathbf{B}\|}$$
 
 ---
 
