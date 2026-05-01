@@ -1,0 +1,12 @@
+flask
+flask-cors
+requests
+pytesseract
+Pillow
+google-search-results
+duckduckgo-search
+numpy
+scikit-learn
+google-genai
+scrapy
+python-dotenv
