@@ -88,7 +88,7 @@ Submit a URL to analyse its similarity against top search results.
 ## ⚙️ Technical Logic
 The "Overall Score" is not a simple average. The application calculates the **mean** for each field (Title, Description, Paragraphs) across all comparison sources, and then calculates the **median** of those three means. This prevents a single missing field (like an empty meta-description) from disproportionately skewing the final result.
 
-All similarity calculations utilise $\text{cosine\_similarity}$ on $\text{TF-IDF}$ matrices:
+All similarity calculations utilise `cosine_similarity` on TF-IDF matrices:
 
 $$\text{similarity} = \cos(\theta) = \frac{A \cdot B}{\|A\| \|B\|}$$
 
